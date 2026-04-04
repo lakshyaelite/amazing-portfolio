@@ -31,7 +31,7 @@
 ### 1. Use as Template
 Click the **"Use this template"** button at the top of this repository to create a new repo in your account.
 
-### 2. Local Setup (Linux / WSL)
+### 2. Local Setup
 If you want to customize and preview locally, ensure you have Ruby and Jekyll installed:
 
 ```bash
@@ -40,7 +40,7 @@ ruby -v
 bundle -v
 
 # Clone and Install
-git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
 bundle install
 
