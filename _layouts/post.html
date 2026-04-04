@@ -1,0 +1,74 @@
+---
+layout: base
+---
+
+<article class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+
+                <header class="mb-5 text-center">
+                    <h1 class="display-4 fw-bold mb-3">{{ page.title }}</h1>
+
+                    <div class="text-muted mb-4">
+                        <time datetime="{{ page.date | date_to_xmlschema }}">
+                            {{ page.date | date: "%B %d, %Y" }}
+                        </time>
+                        <span class="mx-2">•</span>
+                        <span class="reading-time">
+                            <i class="bi bi-stopwatch-fill"></i>
+                            {% assign words = content | number_of_words %}
+                            {% if words < 360 %}
+                              1 min read
+                            {% else %}
+                              {{ words | divided_by: 180 }} min read
+                            {% endif %}
+                        </span>
+                    </div>
+
+                    {% if page.cover %}
+                    <figure class="post-cover-figure mb-4">
+                        <img src="{{ page.cover | relative_url }}" alt="{{ page.title }} cover image" class="img-fluid rounded shadow">
+                    </figure>
+                    {% endif %}
+                </header>
+
+                <div class="content post-content" data-pagefind-body data-pagefind-meta="title: {{ page.title }}" data-pagefind-meta="date: {{ page.date | date: '%Y-%m-%d' }}">
+                    {{ content }}
+                </div>
+
+                <div id="giscus-container" class="mb-5">
+                    {% if site.giscus.enabled and site.giscus.repo_id and site.giscus.category_id %}
+                    <script src="https://giscus.app/client.js"
+                            data-repo="{{ site.giscus.repo }}"
+                            data-repo-id="{{ site.giscus.repo_id }}"
+                            data-category="{{ site.giscus.category }}"
+                            data-category-id="{{ site.giscus.category_id }}"
+                            data-mapping="{{ site.giscus.mapping }}"
+                            data-strict="{{ site.giscus.strict }}"
+                            data-reactions-enabled="{{ site.giscus.reactions_enabled }}"
+                            data-emit-metadata="{{ site.giscus.emit_metadata }}"
+                            data-input-position="{{ site.giscus.input_position }}"
+                            data-theme="{{ site.giscus.theme }}"
+                            data-lang="{{ site.giscus.lang }}"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                    </script>
+                    {% else %}
+                    <p class="text-muted small mb-0">
+                        Comments are not enabled. Set <code>giscus</code> variables in <code>_config.yml</code>.
+                    </p>
+                    {% endif %}
+                </div>
+
+                <div class="text-center">
+                    <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline-primary rounded-pill px-4">
+                        ← Back to Blog
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</article>

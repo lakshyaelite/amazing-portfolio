@@ -1,0 +1,11 @@
+- title: "Project One"
+  description: "A brief explanation of what this project does."
+  image: "https://placehold.co/600x400?text=Project+One"
+  link: "https://github.com/user/project1"
+  tags: ["HTML", "CSS", "JS"]
+
+- title: "Project Two"
+  description: "Another cool project description."
+  image: "https://placehold.co/600x400?text=Project+Two"
+  link: "https://github.com/user/project2"
+  tags: ["Jekyll", "Liquid"]

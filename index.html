@@ -1,0 +1,214 @@
+---
+layout: base
+title: Home
+---
+
+<header class="hero-section text-center">
+    <div class="container">
+
+        <div class="profile-container mb-4">
+            <img
+                src="{{ site.og_image | relative_url }}"
+                alt="{{ site.title }} profile photo"
+                class="profile-img shadow-lg"
+                width="250"
+                height="250"
+                decoding="async"
+                fetchpriority="high"
+            >
+        </div>
+
+        <h1 class="display-4 fw-bold mb-2">{{ site.title }}</h1>
+        <p class="lead mb-4 text-secondary">{{ site.tagline }}</p>
+
+        <div class="social-links mb-5">
+            {% for link in site.social %}
+                {% if link[1] != "" %}
+                <a href="{{ link[1] }}" class="social-icon" aria-label="{{ link[0] }}" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-{{ link[0] }}"></i>
+                </a>
+                {% endif %}
+            {% endfor %}
+
+            {% if site.email %}
+            <a href="mailto:{{ site.email }}" class="social-icon" aria-label="Email">
+                <i class="bi bi-envelope"></i>
+            </a>
+            {% endif %}
+        </div>
+        <i class="bi bi-chevron-down" id="down-arrow-thing"></i>
+
+    </div>
+</header>
+
+<section id="blog" class="py-5 bg-soft">
+    <div class="container">
+
+        <div class="section-header text-center mb-5">
+            <h2 class="fw-bold">Latest Blog Posts</h2>
+            <div class="underline mx-auto"></div>
+        </div>
+
+        <div class="row justify-content-center g-4">
+            {% for post in site.posts limit:3 %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    {% if post.cover %}
+                    <img
+                        src="{{ post.cover | relative_url }}"
+                        alt="{{ post.title }} cover image"
+                        class="card-img-top"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    {% endif %}
+
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold">
+                            <a href="{{ post.url | relative_url }}" class="text-decoration-none">
+                                {{ post.title }}
+                            </a>
+                        </h5>
+
+                        <p class="card-text text-muted small mb-3">
+                            {% if post.description %}
+                                {{ post.description | truncate: 100 }}
+                            {% else %}
+                                {{ post.excerpt | strip_html | truncate: 100 }}
+                            {% endif %}
+                        </p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-3">
+                                <small class="text-muted">
+                                    {{ post.date | date: "%B %d, %Y" }}
+                                </small>
+                                <small class="text-muted reading-time">
+                                    <i class="bi bi-stopwatch-fill"></i>
+                                    {% assign words = post.content | number_of_words %}
+                                    {{ words | divided_by: 180 | plus: 1 }} min read
+                                </small>
+                            </div>
+                            <a href="{{ post.url | relative_url }}" class="btn btn-outline-primary btn-sm rounded-pill">
+                                Read More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="{{ '/blog/' | relative_url }}" class="btn btn-primary rounded-pill px-4">
+                View All Posts
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<section id="projects" class="py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="fw-bold">Latest Projects</h2>
+            <div class="underline mx-auto"></div>
+        </div>
+        <div class="row justify-content-center g-4">
+            {% for project in site.data.projects %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="{{ project.image | relative_url }}" class="card-img-top rounded-top" alt="{{ project.title }}">
+                    <div class="card-body">
+                        <h5 class="fw-bold">{{ project.title }}</h5>
+                        <p class="text-muted small">{{ project.description }}</p>
+                        <div class="mb-3">
+                            {% for tag in project.tags %}
+                            <span class="badge bg-light text-dark border">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                        <a href="{{ project.link }}" class="btn btn-sm btn-outline-primary rounded-pill">View Project</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="certificates" class="py-5 bg-soft">
+    <div class="container">
+        
+        <div class="section-header text-center mb-5">
+            <h2 class="fw-bold">Certifications</h2>
+            <div class="underline mx-auto"></div>
+        </div>
+
+        <div class="row justify-content-center g-4">
+            {% for cert in site.data.certificates %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    
+                    <div class="position-relative overflow-hidden">
+                        <img 
+                            src="{{ cert.image | relative_url }}" 
+                            class="card-img-top" 
+                            alt="{{ cert.title }}"
+                            style="height: 200px; object-fit: cover;"
+                        >
+                        <div class="position-absolute top-0 end-0 m-3">
+                            <span class="cert-badge badge border shadow-sm px-3 py-2 rounded-pill">
+                                {{ cert.issuer }}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="card-body p-4 text-start">
+                        <h5 class="card-title fw-bold mb-2">
+                            {{ cert.title }}
+                        </h5>
+                        <p class="card-text text-muted small mb-3">
+                            Verified certification from <strong>{{ cert.issuer }}</strong>. 
+                            Earned in {{ cert.date }}.
+                        </p>
+                        
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="text-primary small fw-semibold">
+                                <i class="bi bi-patch-check-fill me-1"></i> Verified
+                            </span>
+                            <a href="{{ cert.link }}" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill px-3">
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-5 mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-7">
+                <div class="contact-card p-5 shadow-lg border-0 rounded-4">
+                    <h2 class="text-center mb-4 fw-bold">Let's Collaborate</h2>
+                    <form id="emailForm" data-email="{{ site.email }}">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Subject</label>
+                            <input type="text" id="subject" class="form-control form-control-lg" placeholder="What's on your mind?" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Your Message</label>
+                            <textarea id="message" class="form-control form-control-lg" rows="4" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill shadow-sm">
+                            <i class="fas fa-paper-plane me-2"></i> Send
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

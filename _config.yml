@@ -1,0 +1,63 @@
+# ==========================================
+# Site Settings (Edit these for your site)
+# ==========================================
+title: "First Last"
+tagline: "Your Catchy Tagline"
+description: >-
+  A brief description of your portfolio and blog. 
+  This shows up in search engine results and social media previews.
+url: "https://your-username.github.io"
+email: "your-email@example.com"
+og_image: "https://placehold.co/300x300?text=Profile+Photo" # Profile photo
+
+# ==========================================
+# Social Links (Leave empty to hide)
+# ==========================================
+social:
+  github: "w"
+  linkedin: "w"
+  twitter: "w"
+  instagram: ""
+  youtube: ""
+
+# ==========================================
+# Giscus Comments Settings
+# ==========================================
+giscus:
+  enabled: false # Toggle this to true to enable Giscus comments
+  repo: "your-username/your-repo-name"
+  repo_id: ""
+  category: "Announcements"
+  category_id: ""
+  mapping: "pathname"
+  strict: "0"
+  reactions_enabled: "1"
+  emit_metadata: "0"
+  input_position: "top"
+  theme: "preferred_color_scheme"
+  lang: "en"
+
+# ==========================================
+# ! DO NOT EDIT BELOW THIS LINE UNLESS YOU KNOW WHAT YOU'RE DOING
+# ==========================================
+markdown: kramdown
+highlighter: rouge
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - README.md
+  - .gitignore
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+kramdown:
+  syntax_highlighter_opts:
+    disable_highlighting: true
