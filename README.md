@@ -62,7 +62,7 @@ Customize the portfolio by editing these specific files:
 | `_data/certificates.yml` | List your certifications and issuer details. |
 | `_data/projects.yml` | Add your portfolio items and image paths. |
 | `_data/socials.yml` | Link your GitHub, LinkedIn, and Twitter profiles. |
-| `assets/css/style.css` | Update `--primary-color` to match your brand. |
+| `style.css` | Update `--primary-color` to match your brand. |
 
 -----
 
