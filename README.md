@@ -1,7 +1,7 @@
 <div align="center">
 
 # Amazing Portfolio
-**A professional, dark-mode-first Jekyll portfolio with macOS-style code blocks.**
+**The professional Jekyll portfolio.**
 
 [![Use Template](https://img.shields.io/badge/Use_this_template-2ea44f?style=for-the-badge&logo=github)](https://github.com/lakshyaelite/amazing-portfolio/generate)
 [![Jekyll-Build](https://img.shields.io/badge/Jekyll-v4.3.2-red.svg?style=for-the-badge&logo=jekyll)](https://jekyllrb.com/)
