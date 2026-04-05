@@ -12,7 +12,7 @@
 
 <img src="screenshot.png" alt="Portfolio Screenshot" width="800" style="border-radius: 12px; border: 1px solid #334155; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
 
-### ~Live Demo~ • [Report Bug](https://github.com/lakshyaelite/amazing-portfolio/issues) • [Request Feature](https://github.com/lakshyaelite/amazing-portfolio/issues)
+### [Live Demo](http://lakshyasinghchauhan.com/amazing-portfolio/) • [Report Bug](https://github.com/lakshyaelite/amazing-portfolio/issues) • [Request Feature](https://github.com/lakshyaelite/amazing-portfolio/issues)
 
 </div>
 
