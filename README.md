@@ -3,7 +3,7 @@
 # Amazing Portfolio
 **The professional Jekyll portfolio.**
 
-[![Use Template](https://img.shields.io/badge/Use_this_template-2ea44f?style=for-the-badge&logo=github)](https://github.com/lakshyaelite/amazing-portfolio/generate)
+[![Use Template](https://img.shields.io/badge/Use_this_template-2ea44f?style=for-the-badge&logo=github)](https://github.com/lakshyaelite/amazing-portfolio-starter/generate)
 [![Jekyll-Build](https://img.shields.io/badge/Jekyll-v4.3.2-red.svg?style=for-the-badge&logo=jekyll)](https://jekyllrb.com/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-v5.3-blueviolet.svg?style=for-the-badge&logo=bootstrap)](https://getbootstrap.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
