@@ -1,7 +1,7 @@
 # ==========================================
 # Site Settings (Edit these for your site)
 # ==========================================
-title: "First Last"
+title: "John Doe"
 tagline: "Your Catchy Tagline"
 description: >-
   A brief description of your portfolio and blog. 
@@ -14,21 +14,21 @@ og_image: "https://placehold.co/300x300?text=Profile+Photo" # Profile photo
 # Social Links (Leave empty to hide)
 # ==========================================
 social:
-  github: "w"
-  linkedin: "w"
-  twitter: "w"
-  instagram: ""
-  youtube: ""
+  github: "https://github.com/your-github-username"
+  linkedin: "https://linkedin.com/in/your-linkedin-username"
+  twitter: "https://twitter.com/your-twitter-username"
+  instagram: "https://instagram.com/your-instagram-username"
+  youtube: "https://youtube.com/channel/your-youtube-channel-id"
 
 # ==========================================
 # Giscus Comments Settings
 # ==========================================
-giscus:
-  enabled: false # Toggle this to true to enable Giscus comments
-  repo: "your-username/your-repo-name"
-  repo_id: ""
-  category: "Announcements"
-  category_id: ""
+giscus: # Visit https://giscus.app/ to set up your Giscus comments and get the necessary IDs
+  enabled: true # Toggle this to true to enable Giscus comments
+  repo: "lakshyaelite/amazing-portfolio"
+  repo_id: "R_kgDOR5tMrw"
+  category: "Giscus"
+  category_id: "DIC_kwDOR5tMr84C6FLz"
   mapping: "pathname"
   strict: "0"
   reactions_enabled: "1"
